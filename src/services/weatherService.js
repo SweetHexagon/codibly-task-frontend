@@ -1,6 +1,7 @@
 export const fetchWeatherData = async (latitude, longitude) => {
   try {
-    const response = await fetch(`http://localhost:8080/weather?latitude=${latitude}&longitude=${longitude}`);
+    //    const response = await fetch(`http://localhost:8080/weather?latitude=${latitude}&longitude=${longitude}`);
+    const response = await fetch(`https://codibly-task-backend.onrender.com/weather?latitude=${latitude}&longitude=${longitude}`);
     if (!response.ok) {
       throw new Error('Response from the server is not ok');
     }
