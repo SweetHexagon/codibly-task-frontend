@@ -1,9 +1,9 @@
-body.light {
+.App.dark {
   background-color: white;
   color: black;
 }
 
-body.dark {
+.App.dark {
   background-color: #121212;
   color: white;
 }
