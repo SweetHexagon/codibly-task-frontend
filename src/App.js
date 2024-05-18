@@ -11,10 +11,9 @@ import { getWeatherIcon } from './weatherIcons';
 function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState(null);
-  const [latitude, setLatitude] = useState(null);
-  const [longitude, setLongitude] = useState(null);
+
   const [loading, setLoading] = useState(true);
-  const [currentLocation, setCurrentLocation] = useState(null);
+  const [currentLocation, setCurrentLocation] = useState([51.505, -0.09]);
 
   useEffect(() => {
     if (currentLocation?.length > 0) {
@@ -33,7 +32,7 @@ function App() {
 
       getWeatherData();
     }
-  }, [latitude, longitude]);
+  }, currentLocation);
 
   const handleGetCurrentLocation = () => {
     setLoading(true)
@@ -43,8 +42,7 @@ function App() {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const { latitude, longitude } = position.coords;
-          setLatitude(latitude);
-          setLongitude(longitude);
+
           setCurrentLocation([latitude, longitude]);
         },
         (error) => {
@@ -72,8 +70,7 @@ function App() {
         <div className="mb-5 ">
           <Map
             onLocationSelect={(lat, lng) => {
-              setLatitude(lat);
-              setLongitude(lng);
+
               setCurrentLocation([lat, lng]);
               setLoading(true);
               setWeatherData(null);

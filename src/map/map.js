@@ -33,7 +33,7 @@ function RecenterMap({ center }) {
 }
 
 const MapPicker = ({ onLocationSelect, center }) => {
-  const [position, setPosition] = useState(center);
+  const [position, setPosition] = useState(center || [51.505, -0.09]);
 
   useEffect(() => {
     if (center) {
