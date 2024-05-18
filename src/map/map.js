@@ -1,5 +1,3 @@
-// src/map/MapPicker.js
-
 import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, useMap, useMapEvent } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
