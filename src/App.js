@@ -14,24 +14,24 @@ function App() {
 
   const [loading, setLoading] = useState(true);
   const [currentLocation, setCurrentLocation] = useState([51.505, -0.09]);
-
+  const getWeatherData = async () => {
+    try {
+      const data = await fetchWeatherData(currentLocation[0], currentLocation[1]);
+      console.log('Fetched data:', data);
+      setWeatherData(data);
+      setLoading(false);
+    } catch (error) {
+      console.error('Fetch error:', error);
+      setError(error);
+      setLoading(false);
+    }
+  };
   useEffect(() => {
-    if (currentLocation?.length > 0) {
-      const getWeatherData = async () => {
-        try {
-          const data = await fetchWeatherData(currentLocation[0], currentLocation[1]);
-          console.log('Fetched data:', data);
-          setWeatherData(data);
-          setLoading(false);
-        } catch (error) {
-          console.error('Fetch error:', error);
-          setError(error);
-          setLoading(false);
-        }
-      };
 
+    if (currentLocation?.length > 0) {
       getWeatherData();
     }
+
   }, currentLocation);
 
   const handleGetCurrentLocation = () => {
@@ -44,6 +44,7 @@ function App() {
           const { latitude, longitude } = position.coords;
 
           setCurrentLocation([latitude, longitude]);
+          getWeatherData();
         },
         (error) => {
           console.error('Geolocation error:', error);
