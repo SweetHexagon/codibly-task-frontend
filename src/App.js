@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import ReactLoading from 'react-loading';
 import { fetchWeatherData } from './services/weatherService';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faCloudSun, faCloudRain, faCloudShowersHeavy, faSmog, faSnowflake, faBolt, faCloudMeatball } from '@fortawesome/free-solid-svg-icons';
 import Map from './map/map';
 import { getWeatherIcon } from './weatherIcons';
 
