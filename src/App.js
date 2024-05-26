@@ -5,7 +5,7 @@ import { fetchWeatherData } from './services/weatherService';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Map from './map/map';
 import { getWeatherIcon } from './weatherIcons';
-import './App.css';  // Assuming you have additional custom CSS
+import './App.css';
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
