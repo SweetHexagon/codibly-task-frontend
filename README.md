@@ -1,3 +1,6 @@
+# You can access this project on this page: https://codibly-task-frontend.onrender.com/, if it’s not suspended yet. Due to the free-of-charge service, when you access this page, you may need to wait approximately 5 minutes for the backend server to start.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
